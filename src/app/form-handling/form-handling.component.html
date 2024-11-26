@@ -1,0 +1,41 @@
+<div class="content-wrapper">
+    <form class="content-wrapper__table" novalidate [formGroup]="form">
+        <div class="content-wrapper__table-grid">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Ex: Anisa Melinda" type="text" formControlName="name" required>
+                <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Ex: anisamelinda11@gmail.com" type="email" formControlName="email" required>
+                <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+                <mat-error *ngIf="hasError('email', 'email')">Invalid email address</mat-error>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required [minlength]="8">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error>
+                <mat-error *ngIf="hasError('password', 'minlength')">Password must be at least 8 characters long.</mat-error>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Confirm password</mat-label>
+                <input matInput type="password" formControlName="repassword" required [minlength]="8" matInput [type]="hideRepassword ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hideRepassword = !hideRepassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hideRepassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="hasError('repassword', 'required') || form.hasError('passwordMismatch') && form.get('repassword')?.touched">
+                    Passwords do not match
+                  </mat-error>
+            </mat-form-field>
+        </div>
+
+        <button  mat-stroked-button color="primary" class="button-submit" type="submit" (click)="onSubmit()">Save</button>
+    </form>
+</div>

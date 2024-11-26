@@ -1,0 +1,40 @@
+
+
+.content-wrapper {
+    &__table-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+}
+
+::ng-deep .mdc-text-field {
+    border: 1px solid cadetblue;
+
+    &--outlined {
+        border-radius: 4px !important;
+
+        &:not(.mdc-text-field--disabled) .mdc-text-field__input {
+            color: cadetblue !important;
+        }
+
+    }
+
+    &--focused,
+    &--invalid {
+        border: 0;
+    }
+
+}
+
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-floating-label, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-floating-label--float-above{
+    color: var(--mdc-outlined-text-field-label-text-color);
+    background: #fff;
+    padding: 0 4px;
+}
+
+::ng-deep .mat-mdc-outlined-button:not(:disabled) {
+    width: 100%;
+    color: cadetblue !important;
+    border: 1px solid cadetblue !important;
+}

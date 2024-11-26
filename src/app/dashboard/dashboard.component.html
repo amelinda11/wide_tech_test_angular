@@ -1,0 +1,19 @@
+<div style="width: 100%;">
+    <mat-tab-group
+        [selectedIndex]="selected.value"
+        (selectedIndexChange)="selected.setValue($event)"
+    >
+        <mat-tab label="State Management"> 
+            <app-state-management></app-state-management>
+        </mat-tab>
+        <mat-tab label="Form Handling and Validation"> 
+            <app-form-handling></app-form-handling>
+        </mat-tab>
+        <mat-tab label="API Integration"> 
+            <app-api-integration></app-api-integration>
+        </mat-tab>
+        <mat-tab label="Routing"> 
+            <app-routing></app-routing>
+        </mat-tab>
+    </mat-tab-group>
+</div>

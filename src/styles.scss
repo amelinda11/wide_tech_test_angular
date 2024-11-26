@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --mdc-outlined-text-field-label-text-color: cadetblue;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@media only screen and (max-width: 768px) {
+    app-dashboard {
+        width: 100%;
+    }
+    
+    .toolbar {
+        img {
+            margin: 0 10px !important;
+        }
+
+        span {
+            font-size: 14px;
+        }
+    }
+
+    .card {
+        line-height: 14px !important;
+        padding: 14px !important;
+        margin: 0 0px 12px !important;
+        span {
+            font-size: 12px;
+        }
+
+        &.highlight-card {
+            min-width: 90% !important;
+
+            span {
+                margin-left: 52px !important;
+            }
+        }
+    }
+
+    svg#rocket {
+        width: 68px !important;
+    }
+}
