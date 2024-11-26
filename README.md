@@ -1,4 +1,4 @@
-# wide_tech_test_angularJs
+# wide_tech_test_angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
 
